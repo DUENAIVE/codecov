@@ -1,3 +1,2 @@
 [deps]
-VQC = "fd793bab-ba85-5560-9228-4d416a425863"
 Zygote = "e88e6eb3-aa80-5325-afca-941959d7151f"
