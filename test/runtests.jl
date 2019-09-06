@@ -1,7 +1,7 @@
 using Test
 
 using Pkg
-Pkg.add("VQC.jl")
+Pkg.add("VQC")
 
 
 @testset "test quantum algorithm" begin
