@@ -2,8 +2,6 @@ language: julia
 julia:
   - nightly
   - 1.0.3
-  - linux
-  - osx
 codecov: true
 coveralls: true
 notifications:
