@@ -1,5 +1,5 @@
 using Test
-using Pkg
+
 
 @testset "test quantum algorithm" begin
     include("algs.jl")
