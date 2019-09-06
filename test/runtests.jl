@@ -1,6 +1,5 @@
 using Test
 using Pkg
-Pkg.add(PackageSpec(path=joinpath(@__DIR__, "VQC.jl")));
 
 @testset "test quantum algorithm" begin
     include("algs.jl")
