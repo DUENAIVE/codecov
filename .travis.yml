@@ -17,7 +17,7 @@ git:
 script:
   - julia --project=test/ -e 'using Pkg; Pkg.add("Zygote"); Pkg.develop(PackageSpec(path=pwd()));Pkg.instantiate()'
 #  - julia -e 'using Pkg; import Pkg; Pkg.add("Zygote"); Pkg.activate(pwd()); Pkg.instantiate(); Pkg.build("$name"); Pkg.test()'
-  - julia --project=test/ test/test.jl deploy
+  - julia --project=test/ test/runtests.jl deploy
 
 after_success:
   - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder())'
