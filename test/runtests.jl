@@ -1,8 +1,6 @@
 using Test
 
-using Pkg
-import Pkg;
-Pkg.add("VQC")
+
 
 @testset "test quantum algorithm" begin
     include("algs.jl")
