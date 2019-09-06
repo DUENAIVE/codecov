@@ -20,8 +20,10 @@ jobs:
       julia: 1.1
       os: linux
       script:
-#        - julia --project=test/ -e 'using Pkg; Pkg.add("Zygote"); Pkg.develop(PackageSpec(path=pwd()));Pkg.instantiate()'
-        - julia -e 'using Pkg;Pkg.add("Zygote"); Pkg.activate(pwd()); Pkg.instantiate(); Pkg.build(); Pkg.test()'
+        - julia -e 'using Pkg; import Pkg; Pkg.add("Zygote")'
+
+        #        - julia --project=test/ -e 'using Pkg; Pkg.add("Zygote"); Pkg.develop(PackageSpec(path=pwd()));Pkg.instantiate()'
+        - julia -e 'using Pkg; import Pkg; Pkg.add("Zygote"); Pkg.activate(pwd()); Pkg.instantiate(); Pkg.build(); Pkg.test()'
 #        - julia --project=test/ test/test.jl deploy
 #      after_success: skip
 
