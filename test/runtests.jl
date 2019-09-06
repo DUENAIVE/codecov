@@ -2,6 +2,7 @@ using Test
 
 using Pkg
 using VQC
+module VQC
 
 
 @testset "test quantum algorithm" begin
