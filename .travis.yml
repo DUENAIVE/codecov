@@ -1,14 +1,29 @@
 language: julia
-os:
+julia:
+  - nightly
+  - 1.0.3
   - linux
   - osx
-julia:
-  - 0.7
-  - nightly
+codecov: true
+coveralls: true
 notifications:
   email: false
+matrix:
+ allow_failures:
+ - julia: nightly
 git:
   depth: 99999999
+jobs:
+  include:
+    - stage: "Documentation"
+      julia: 1.1
+      os: linux
+      script:
+#        - julia -e 'using Pkg; import Pkg; Pkg.add("Zygote")'
+        #        - julia --project=test/ -e 'using Pkg; Pkg.add("Zygote"); Pkg.develop(PackageSpec(path=pwd()));Pkg.instantiate()'
+        - julia -e 'using Pkg; import Pkg; Pkg.add("Zygote"); Pkg.activate(pwd()); Pkg.instantiate(); Pkg.build(); Pkg.test()'
+#        - julia --project=test/ test/test.jl deploy
+#      after_success: skip
 
 after_success:
   - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder())'
