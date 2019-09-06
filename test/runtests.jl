@@ -1,9 +1,8 @@
 using Test
 
 using Pkg
-using VQC
-module VQC
-
+import Pkg;
+Pkg.add("VQC")
 
 @testset "test quantum algorithm" begin
     include("algs.jl")
