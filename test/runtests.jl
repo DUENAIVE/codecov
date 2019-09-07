@@ -1,4 +1,5 @@
 using Test
+push!(LOAD_PATH, "../src")
 
 
 @testset "test quantum algorithm" begin
