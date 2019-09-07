@@ -1,6 +1,6 @@
 using Test
 push!(LOAD_PATH, "../src")
-
+using VQC
 
 @testset "test quantum algorithm" begin
     include("algs.jl")
